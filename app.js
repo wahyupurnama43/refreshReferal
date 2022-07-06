@@ -42,7 +42,7 @@ io.on('connection', socket => {
                 .catch(error => {
                     console.error(error)
                 })
-        }, 1000);
+        }, 60000);
     });
 
 })
