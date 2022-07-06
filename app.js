@@ -14,17 +14,16 @@ app.get('/', (req, res) => {
 io.on('connection', socket => {
     socket.on('get-data', () => {
         // socket.emit('data', 'ada')
-        setInterval(function() {
-            axios
-                .get('https://seal-seiya.com/web/redeemcode.php')
-                .then(res => {
-                    console.log(res);
-                    socket.emit('data', res.data)
-                })
-                .catch(error => {
-                    console.error(error)
-                })
-        }, 1000);
+        // setInterval(function() {
+        //     axios
+        //         .get('https://seal-seiya.com/web/redeemcode.php')
+        //         .then(res => {
+        //             socket.emit('data', res.data)
+        //         })
+        //         .catch(error => {
+        //             console.error(error)
+        //         })
+        // }, 1000);
     });
 })
 
