@@ -6,7 +6,7 @@ const axios = require('axios')
 
 // ketika diakses maka ambil index.html
 app.get('/', (req, res) => {
-    res.sendFile("/index.html");
+    res.sendFile(__dirname + "/index.html");
 })
 
 
