@@ -12,20 +12,19 @@
 
     <div id="status"></div>
 
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.min.js"></script>
+    <script>
+        var socket = io();
+
+        socket.emit('get-data');
+
+        // menerima hasil join user
+        socket.on('data', (body) => {
+            $('#status').html(body);
+        });
+    </script>
 </body>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="node_modules/socket.io/client-disk/socket.io.js"></script>
-<script>
-    var socket = io();
-
-
-    socket.emit('get-data');
-
-    // menerima hasil join user
-    socket.on('data', (body) => {
-        $('#status').html(body);
-    });
-</script>
 
 </html>
